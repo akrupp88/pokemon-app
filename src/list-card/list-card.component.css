@@ -1,0 +1,27 @@
+.pokemon-cards-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+}
+
+.pokemon-card-container {
+    text-align: center;
+}
+
+.pokemon-card {
+    width: 340px;
+    margin: 10px;
+    background-image: linear-gradient(to bottom right, #a7cef1, #d1e3f3 );
+    color: #32608a;
+    border-radius: 10px;
+    border: 0.4rem outset #ffffff;
+}
+
+.toggle-container {
+    padding: 10px;
+    text-align: right;
+}
+
+.toggle-label {
+    padding: 5px;
+}

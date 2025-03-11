@@ -1,0 +1,54 @@
+<div class="toggle-container">
+    <kendo-label class="toggle-label" [for]="switch" text="DETAIL VIEW"></kendo-label>
+    <kendo-switch #switch [(ngModel)]="detailView"></kendo-switch>
+</div>
+
+@if (!detailView) {
+<ng-container>
+    <kendo-grid [kendoGridBinding]="pokemonGridData" [pageSize]="10" [pageable]="true" [sortable]="true" [resizable]="true" [columnMenu]="{filter: true}">
+        <kendo-grid-column field="Name" title="Name"> </kendo-grid-column>
+        <kendo-grid-column field="Type" title="Type"> </kendo-grid-column>
+        <kendo-grid-column field="Height" title="Height"> </kendo-grid-column>
+        <kendo-grid-column field="Weight" title="Weight"> </kendo-grid-column>
+        <kendo-grid-column field="HP" title="HP"> </kendo-grid-column>
+        <kendo-grid-column field="Attack" title="Attack"> </kendo-grid-column>
+        <kendo-grid-column field="Defense" title="Defense"> </kendo-grid-column>
+        <kendo-grid-column field="SpecialAttack" title="Special Attack"> </kendo-grid-column>
+        <kendo-grid-column field="SpecialDefense" title="Special Defense"> </kendo-grid-column>
+        <kendo-grid-column field="Speed" title="Speed"> </kendo-grid-column>
+    </kendo-grid>
+</ng-container>
+}
+
+@else {
+<ng-container>
+    <div class="pokemon-cards-container">
+        @for (pokemon of pokemonGridData; track pokemon.Name) {
+        <kendo-card class="pokemon-card" width="340px" orientation="vertical">
+            <div class="pokemon-card-container">
+                <img kendoCardMedia [src]="pokemon.Img" alt="{{pokemon.Name}}" />
+                <div class="k-vstack">
+                    <kendo-card-header>
+                        <h1 kendoCardTitle>{{pokemon.Name | uppercase}}</h1>
+                    </kendo-card-header>
+                    <kendo-card-body>
+                        <p>
+                            <b>Type:</b> {{pokemon.Type}}
+                        </p>
+                        <p>
+                            <b>Height:</b> {{pokemon.Height}}
+                        </p>
+                        <p>
+                            <b>Weight:</b> {{pokemon.Weight}}
+                        </p>
+                        <p>
+                            <b>Attack power:</b> {{pokemon.Attack}}
+                        </p>
+                    </kendo-card-body>
+                </div>
+            </div>
+        </kendo-card>
+        }
+    </div>
+</ng-container>
+}
