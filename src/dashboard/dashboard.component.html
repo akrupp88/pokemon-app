@@ -1,0 +1,51 @@
+<div class="chart-container">
+  <kendo-chart [style.width.px]="600" [style.height.px]="600" class="chart-padding">
+    <kendo-chart-title text="Distribution of pokemon by type" [font]="'bold 23px sans-serif'"></kendo-chart-title>
+    <kendo-chart-tooltip format="{0:n2} %"></kendo-chart-tooltip>
+    <kendo-chart-series>
+      <kendo-chart-series-item type="donut" [autoFit]="autofit" [data]="donutChartTypeData" categoryField="type"
+        field="total">
+        <kendo-chart-series-item-labels position="outsideEnd" [content]="labelContent" color="#000" background="none">
+        </kendo-chart-series-item-labels>
+      </kendo-chart-series-item>
+    </kendo-chart-series>
+    <kendo-chart-legend [visible]="false"></kendo-chart-legend>
+  </kendo-chart>
+
+  <kendo-chart [style.width.px]="1000" [style.height.px]="600" class="chart-padding">
+    <kendo-chart-title text="Abilities introduced per generation" [font]="'bold 23px sans-serif'"></kendo-chart-title>
+    <kendo-chart-tooltip></kendo-chart-tooltip>
+    <kendo-chart-legend position="bottom" orientation="horizontal">
+    </kendo-chart-legend>
+    <kendo-chart-category-axis>
+      <kendo-chart-category-axis-item [categories]="columnChartAbilityCategories">
+      </kendo-chart-category-axis-item>
+    </kendo-chart-category-axis>
+    <kendo-chart-series>
+      <kendo-chart-series-item name="Ability" type="column" [data]="columnChartAbilityData">
+      </kendo-chart-series-item>
+    </kendo-chart-series>
+  </kendo-chart>
+
+  <kendo-chart [style.width.px]="2000" [style.height.px]="600" class="chart-padding">
+    <kendo-chart-title text="Status distribution of the 4 strongest Pokemon"
+      [font]="'bold 23px sans-serif'"></kendo-chart-title>
+    <kendo-chart-tooltip></kendo-chart-tooltip>
+    <kendo-chart-legend position="bottom" orientation="horizontal">
+    </kendo-chart-legend>
+    <kendo-chart-category-axis>
+      <kendo-chart-category-axis-item [categories]="barChartStatsCategories">
+      </kendo-chart-category-axis-item>
+    </kendo-chart-category-axis>
+    <kendo-chart-series>
+      <kendo-chart-series-item name="HP" type="bar" [gap]="2" [spacing]="0.25" [data]="barChartStatHPData">
+      </kendo-chart-series-item>
+      <kendo-chart-series-item name="Attack" type="bar" [data]="barChartStatAttackData">
+      </kendo-chart-series-item>
+      <kendo-chart-series-item name="Defense" type="bar" [data]="barChartStatDefenseData">
+      </kendo-chart-series-item>
+      <kendo-chart-series-item name="SpecialAttack" type="bar" [data]="barChartStatSpecialAttackData">
+      </kendo-chart-series-item>
+    </kendo-chart-series>
+  </kendo-chart>
+</div>
