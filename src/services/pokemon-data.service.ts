@@ -4,7 +4,7 @@ import { Pokemon, Generation } from '../models/pokemon.models'
 import { Observable, map } from 'rxjs'
 
 const baseUrl = 'https://pokeapi.co/api/v2/';
-const limit = 10000; //pokemon number
+const limit = 10000; //number of pokemon to show
 
 /**
  * Injectable

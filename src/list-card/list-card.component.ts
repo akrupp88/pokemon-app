@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GridModule } from "@progress/kendo-angular-grid";
 import { Pokemon } from '../models/pokemon.models'
 import { CommonModule } from "@angular/common";
@@ -21,12 +21,14 @@ export class ListCardComponent implements OnInit {
   public pokemonGridData: Pokemon[] = [];
   public detailView = false;
 
+/**
+ * Constructor ListCardComponent
+ */
   constructor(private dataStorage: DataStorage) {
   }
 
   ngOnInit(): void {
     this.pokemonGridData = this.dataStorage.getPokemonData();
     this.pokemonGridData.sort((a, b) => a.Name > b.Name ? 1 : -1);
-    debugger;
   }
 }

@@ -17,22 +17,24 @@ export class DashboardComponent implements OnInit {
   public pokemonChartData: Pokemon[] = [];
   private generationsChartData: Generation[] = [];
 
-  //Donut chart
+  // Donut chart properties
   public donutChartTypeData: any[] = [];
   public autofit = true;
 
-  //column chart
+  // Column chart properties
   public columnChartAbilityCategories: any[] = [];
   public columnChartAbilityData: any[] = [];
 
-  //bar chart
+  // Bar chart properties
   public barChartStatsCategories: any[] = [];
   public barChartStatHPData: any[] = [];
   public barChartStatAttackData: any[] = [];
   public barChartStatDefenseData: any[] = [];
   public barChartStatSpecialAttackData: any[] = [];
 
-
+  /**
+   * Constructor DashboardComponent
+   */
   constructor(private dataStorage: DataStorage) {
   }
 
@@ -44,10 +46,13 @@ export class DashboardComponent implements OnInit {
     this.prepareData();
   }
 
+  /**
+   * Prepares chart data
+   */
   private prepareData() {
     let rangeOfStrongestPokemon: any[] = [];
 
-    //verteilung nach typen
+    // Distribution of pokemon by type
     for (const pokemon of this.pokemonChartData) {
       let existedType = this.donutChartTypeData.filter(type => type.type == pokemon.Type);
       if (existedType.length > 0) {
@@ -62,7 +67,7 @@ export class DashboardComponent implements OnInit {
       data.total = data.total * 100 / this.pokemonChartData.length
     });
 
-    // bar chart
+    // Status distribution of the 4 strongest Pokemon
     rangeOfStrongestPokemon = JSON.parse(JSON.stringify(this.pokemonChartData)); //deep copy
     rangeOfStrongestPokemon.sort((a, b) => a.StatsSum > b.StatsSum ? -1 : 1);
     rangeOfStrongestPokemon = rangeOfStrongestPokemon.slice(0, 4);
@@ -73,7 +78,7 @@ export class DashboardComponent implements OnInit {
     this.barChartStatDefenseData = rangeOfStrongestPokemon.map(pokemon => pokemon.Defense);
     this.barChartStatSpecialAttackData = rangeOfStrongestPokemon.map(pokemon => pokemon.SpecialAttack);
 
-    //neue fähigkeiten in generationen
+    // Abilities introduced per generation
     for (const generation of this.generationsChartData) {
       this.columnChartAbilityCategories.push(generation.Id);
       this.columnChartAbilityData.push(generation.NumberOfNewAbilities);

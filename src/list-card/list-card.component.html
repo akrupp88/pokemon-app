@@ -5,7 +5,8 @@
 
 @if (!detailView) {
 <ng-container>
-    <kendo-grid [kendoGridBinding]="pokemonGridData" [pageSize]="10" [pageable]="true" [sortable]="true" [resizable]="true" [columnMenu]="{filter: true}">
+    <kendo-grid [kendoGridBinding]="pokemonGridData" [pageSize]="10" [pageable]="true" [sortable]="true"
+        [resizable]="true" [columnMenu]="{filter: true}">
         <kendo-grid-column field="Name" title="Name"> </kendo-grid-column>
         <kendo-grid-column field="Type" title="Type"> </kendo-grid-column>
         <kendo-grid-column field="Height" title="Height"> </kendo-grid-column>

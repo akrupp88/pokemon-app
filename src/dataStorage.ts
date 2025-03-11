@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Pokemon, Generation } from './models/pokemon.models'
 
+/**
+ * Injectable
+ */
 @Injectable({
   providedIn: 'root'
 })
+
+/**
+ * Data storage for the pokemon information
+ */
 export class DataStorage {
   private dataStorage: Data = new Data();
 
