@@ -24,11 +24,11 @@ The Pokemon App has following :
 - pokemon-data.service
 - dataStorage
 
-The app componennt represents the basis and includes pokemon logo and navigation bar.
+The app component represents the basis and includes pokemon logo and navigation bar.
 
-The dashboard componennt represents the charts and data visualization.
+The dashboard component represents the charts and data visualization.
 
-The list-card componennt represents the list view and the card view of pokemon. You can toogle between these views.
+The list-card component represents the list view and the card view of pokemon. You can toogle between these views.
 
 The pokemon model holds relevant information of the pokemon needed for the app.
 
