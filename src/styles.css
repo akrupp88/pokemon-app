@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    background: #dadbdc;
+}
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* kendo custom styles */
+
+/* kendo grid */
+
+.k-grid,
+.k-grid .k-grid-aria-root,
+.k-grid .k-grid-pager {
+    border-radius: 10px;
+}
+
+.k-grid .k-grid-header .k-table-th {
+    background-color: #a7cef1;
+}
+
+.k-grid .k-grid-header .k-table-th .k-link {
+    color: #32608a;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.k-grid .k-table-row.k-table-row {
+    background-color: #ffffff;
+}
+
+.k-grid .k-table-row.k-table-alt-row {
+    background-color: #ffc1ab;
+}
