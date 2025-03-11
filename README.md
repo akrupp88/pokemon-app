@@ -1,26 +1,44 @@
 # PokemonApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.12.
+## Description
 
-## Development server
+This Pokemon App shows information about all exisiting pokemon and compares them to each other. The information comes from the [pokeapi](https://pokeapi.co/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies
 
-## Code scaffolding
+The Pokemon App uses following technoogies:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular Version 17.3.12
+- Kendo UI library Trial Version
+
+Kendo UI is used because it has a lot of UI Components and data visualization gadgets. There are many Kendo charts and the kendo grid has filter functions. It is suitable for comparing and filtering the pokemon. You can also search for a specific pokemon.
+
+## Structure
+
+The Pokemon App has following :
+
+- app.component
+- dashboard.component
+- list-card.component
+- pokemon.models
+- pokemon-data.service
+- dataStorage
+
+The app componennt represents the basis and includes pokemon logo and navigation bar.
+
+The dashboard componennt represents the charts and data visualization.
+
+The list-card componennt represents the list view and the card view of pokemon. You can toogle between these views.
+
+The pokemon model holds relevant information of the pokemon needed for the app.
+
+The pokemon data service provides http methods to get information needed.
+
+The data storage provides methods to add and get pokemon data. So the information can be used in the entire app.  
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `ng serve --open` to build and serve the project, rebuilding on file changes.
 
 ## Further help
 
